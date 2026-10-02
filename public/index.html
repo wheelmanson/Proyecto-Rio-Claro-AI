@@ -1,63 +1,154 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#f2f5ef">
-    <title>Certifica | Asistente</title>
-    <link rel="stylesheet" href="/styles.css">
-    <script src="/app.js" defer></script>
-  </head>
-  <body>
-    <div class="app-layout">
-      <header class="topbar">
-        <a class="brand" href="/" aria-label="Certifica, inicio">
-          <span class="brand-mark" aria-hidden="true">C</span>
-          <span class="brand-name">certifica<span>.</span></span>
-        </a>
-        <div class="topbar-context">
-          <span class="context-dot" aria-hidden="true"></span>
-          <span>Asistente de certificación</span>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0f172a">
+
+  <title>Río Claro | Asistente Inteligente</title>
+
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+
+<body>
+
+  <div class="app">
+
+    <header class="header">
+
+      <div class="logo-section">
+
+        <div class="logo">
+          RC
         </div>
-      </header>
 
-      <main class="chat-shell">
-        <section class="conversation" aria-label="Conversación">
-          <div class="conversation-heading">
-            <p class="eyebrow">CONSULTA</p>
-            <h1>¿En qué te puedo orientar?</h1>
+        <div>
+
+          <div class="company-name">
+            Distribuidora Río Claro
           </div>
 
-          <div class="messages" id="messages" aria-live="polite" aria-relevant="additions text">
-            <article class="message assistant-message">
-              <span class="message-avatar" aria-hidden="true">C</span>
-              <div class="message-content">
-                <p class="message-author">Certifica <span>Asistente</span></p>
-                <p class="message-text">Hola. ¿Qué tema de certificación quieres revisar?</p>
+          <div class="company-subtitle">
+            Plataforma Empresarial de IA
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="status">
+
+        <span class="status-dot"></span>
+
+        <span>
+          En línea
+        </span>
+
+      </div>
+
+    </header>
+
+    <main class="main">
+
+      <div class="assistant-card">
+
+        <div class="assistant-header">
+
+          <div class="assistant-icon">
+            IA
+          </div>
+
+          <div>
+
+            <h1>
+              Asistente Inteligente Río Claro
+            </h1>
+
+            <p>
+              Consulta información operativa y administrativa de la organización.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div
+          class="messages"
+          id="messages"
+          aria-live="polite"
+          aria-relevant="additions text">
+
+          <article class="message assistant-message">
+
+            <div class="message-avatar">
+              RC
+            </div>
+
+            <div class="message-body">
+
+              <div class="message-author">
+                Río Claro · Asistente Inteligente
               </div>
-            </article>
-          </div>
-          <p class="typing-indicator" id="typing-indicator" role="status" hidden>Escribiendo…</p>
-        </section>
 
-        <form class="composer" id="chat-form">
-          <label class="visually-hidden" for="message-input">Escribe tu mensaje</label>
-          <textarea
-            id="message-input"
-            name="message"
-            rows="1"
-            maxlength="2000"
-            placeholder="Escribe tu consulta..."
-            autocomplete="off"
-            required
-          ></textarea>
-          <button class="send-button" id="send-button" type="submit">
-            <span>Enviar</span>
-            <span class="send-arrow" aria-hidden="true">&#8599;</span>
-          </button>
-          <p class="form-error" id="form-error" role="alert" hidden></p>
-        </form>
-      </main>
-    </div>
-  </body>
+              <div class="message-content">
+
+                Bienvenido.
+
+                <br><br>
+
+                Escribe tu consulta para comenzar.
+
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+
+        <p
+          id="typing-indicator"
+          class="typing-indicator"
+          hidden>
+
+          Analizando información...
+
+        </p>
+
+      </div>
+
+      <form
+        id="chat-form"
+        class="composer">
+
+        <textarea
+          id="message-input"
+          name="message"
+          maxlength="2000"
+          rows="1"
+          placeholder="Ejemplo: ¿Cómo se registra una factura?"
+          required></textarea>
+
+        <button
+          id="send-button"
+          type="submit">
+
+          Consultar
+
+        </button>
+
+      </form>
+
+      <p
+        id="form-error"
+        class="form-error"
+        hidden>
+      </p>
+
+    </main>
+
+  </div>
+
+</body>
 </html>
