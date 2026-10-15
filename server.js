@@ -58,7 +58,6 @@ function logFoundryFailure(error) {
 
 function sanitizarRespuesta(texto = "") {
   return texto
-    .replace(//gs, "")
     .replace(/turn\d+file\d+/gi, "")
     .replace(/turn\d+search\d+/gi, "")
     .replace(/turn\d+view\d+/gi, "")
@@ -66,6 +65,7 @@ function sanitizarRespuesta(texto = "") {
     .replace(/\s{2,}/g, " ")
     .trim();
 }
+
 
 if (foundryConfigured) {
 
