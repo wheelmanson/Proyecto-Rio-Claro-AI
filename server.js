@@ -56,6 +56,17 @@ function logFoundryFailure(error) {
   );
 }
 
+function sanitizarRespuesta(texto = "") {
+  return texto
+    .replace(//gs, "")
+    .replace(/turn\d+file\d+/gi, "")
+    .replace(/turn\d+search\d+/gi, "")
+    .replace(/turn\d+view\d+/gi, "")
+    .replace(/filecite/gi, "")
+    .replace(/\s{2,}/g, " ")
+    .trim();
+}
+
 if (foundryConfigured) {
 
   const projectClient =
@@ -172,7 +183,7 @@ app.post(
           );
 
       response.json({
-        reply: result.output_text,
+        reply: sanitizarRespuesta(result.output_text),
         conversation_id:
           conversationId,
       });

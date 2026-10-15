@@ -23,7 +23,7 @@ function appendMessage(text, sender) {
 
     const author = document.createElement("p");
     author.className = "message-author";
-    author.textContent = "Río Claro";
+    author.textContent = "Río Claro - ";
 
     const role = document.createElement("span");
     role.textContent = "Asistente Inteligente";
