@@ -354,42 +354,17 @@ body {
 
 }
 
-@media (max-width: 768px) {
-
-  .header {
-
-    flex-direction: column;
-
-    align-items: flex-start;
-
-    gap: 16px;
-
-  }
-
-  .composer {
-
-    flex-direction: column;
-
-  }
-
-  .composer button {
-
-    width: 100%;
-
-    height: 56px;
-
-  }
-
-  .quick-actions {
+@media (max-width: 768px) {.quick-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 12px;
+  margin-top: 16px;
+  margin-bottom: 12px;
 }
 
 .quick-btn {
   border: 1px solid var(--border);
-  background: white;
+  background: #ffffff;
   color: var(--primary-dark);
   border-radius: 10px;
   padding: 10px 14px;
@@ -401,7 +376,43 @@ body {
 
 .quick-btn:hover {
   background: var(--primary);
-  color: white;
+  color: #ffffff;
+  border-color: var(--primary);
+}
+
+.quick-btn:active {
+  transform: scale(.98);
+}
+
+.message-content .quick-actions {
+  margin-top: 16px;
+}
+
+@media (max-width: 768px) {
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .composer {
+    flex-direction: column;
+  }
+
+  .composer button {
+    width: 100%;
+    height: 56px;
+  }
+
+  .quick-actions {
+    flex-direction: column;
+  }
+
+  .quick-btn {
+    width: 100%;
+  }
+
 }
 
 }
