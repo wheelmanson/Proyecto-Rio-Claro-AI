@@ -202,10 +202,17 @@ body {
   font-weight: 700;
 }
 
+.logo-section {
+  display: flex;
+  justify-content: center; 
+  width: 100%; 
+  margin-bottom: 20px; 
+}
+
 .main-logo {
   height: 150px; /* Puedes subir o bajar este número para hacer el logo más grande o chico */
   width: auto;
   object-fit: contain;
-  /* Opcional: si la imagen tiene un fondo blanco sólido y quieres que se fusione un poco con tu fondo oscuro, puedes usar un filtro, aunque lo ideal es guardar la imagen sin fondo (PNG transparente) */
-  border-radius: 8px;
+  display: block; /* Esto es clave para que el centrado funcione */
+  margin: 0 auto; /* El 'auto' a la izquierda y derecha lo centra a la perfección */
 }
