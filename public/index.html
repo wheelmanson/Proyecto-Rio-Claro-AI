@@ -24,7 +24,6 @@
         </div>
 
         <div>
-
           <div class="company-name">
             Distribuidora Río Claro
           </div>
@@ -32,19 +31,13 @@
           <div class="company-subtitle">
             Plataforma Empresarial de IA
           </div>
-
         </div>
 
       </div>
 
       <div class="status">
-
         <span class="status-dot"></span>
-
-        <span>
-          En línea
-        </span>
-
+        <span>En línea</span>
       </div>
 
     </header>
@@ -119,50 +112,67 @@
                   <button
                     type="button"
                     class="quick-btn"
-                    onclick="document.getElementById('message-input').value='¿Cómo se registra una factura?';">
+                    onclick="
+                      document.getElementById('message-input').value='¿Cómo se registra una factura?';
+                      document.getElementById('chat-form').requestSubmit();
+                    ">
                     📄 Facturación
                   </button>
 
                   <button
                     type="button"
                     class="quick-btn"
-                    onclick="document.getElementById('message-input').value='¿Cómo se controla el inventario?';">
+                    onclick="
+                      document.getElementById('message-input').value='¿Cómo se controla el inventario?';
+                      document.getElementById('chat-form').requestSubmit();
+                    ">
                     📦 Inventario
                   </button>
 
                   <button
                     type="button"
                     class="quick-btn"
-                    onclick="document.getElementById('message-input').value='¿Cómo se genera una orden de compra?';">
+                    onclick="
+                      document.getElementById('message-input').value='¿Cómo se genera una orden de compra?';
+                      document.getElementById('chat-form').requestSubmit();
+                    ">
                     🛒 Compras
                   </button>
 
                   <button
                     type="button"
                     class="quick-btn"
-                    onclick="document.getElementById('message-input').value='¿Cómo dar de alta un proveedor?';">
+                    onclick="
+                      document.getElementById('message-input').value='¿Cómo dar de alta un proveedor?';
+                      document.getElementById('chat-form').requestSubmit();
+                    ">
                     🚚 Proveedores
                   </button>
 
                   <button
                     type="button"
                     class="quick-btn"
-                    onclick="document.getElementById('message-input').value='¿Cómo procesar una devolución?';">
+                    onclick="
+                      document.getElementById('message-input').value='¿Cómo procesar una devolución?';
+                      document.getElementById('chat-form').requestSubmit();
+                    ">
                     ↩️ Devoluciones
                   </button>
 
                   <button
                     type="button"
                     class="quick-btn"
-                    onclick="document.getElementById('message-input').value='¿Cómo atender una queja de cliente?';">
-                    ☎️ Atención a Clientes
+                    onclick="
+                      document.getElementById('message-input').value='¿Cómo atender una queja de cliente?';
+                      document.getElementById('chat-form').requestSubmit();
+    lientes
                   </button>
 
                 </div>
 
                 <br>
 
-                Seleccione una opción o escriba una pregunta personalizada.
+                Seleccione una opción o escriba una consulta personalizada.
 
               </div>
 
@@ -176,9 +186,7 @@
           id="typing-indicator"
           class="typing-indicator"
           hidden>
-
           Analizando información...
-
         </p>
 
       </div>
@@ -192,13 +200,13 @@
           name="message"
           maxlength="2000"
           rows="1"
-          placeholder="Ejemplo: ¿Cómo se 
+          placeholder="Ejemplo: ¿Cómo se registra una factura?"
+          required></textarea>
+
         <button
           id="send-button"
           type="submit">
-
           Consultar
-
         </button>
 
       </form>
