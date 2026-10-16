@@ -218,7 +218,7 @@ body {
 }
 
 .main-logo {
-  height: 180px; /* Puedes subir o bajar este número para hacer el logo más grande o chico */
+  height: 150px; /* Puedes subir o bajar este número para hacer el logo más grande o chico */
   width: auto;
   object-fit: contain;
   display: block; /* Esto es clave para que el centrado funcione */
