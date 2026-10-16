@@ -49,7 +49,12 @@ function appendMessage(text, sender) {
   }
 
   messages.append(article);
-  messages.scrollTop = messages.scrollHeight;
+  
+  // Auto-scroll suave hacia el nuevo mensaje
+  setTimeout(() => {
+    article.scrollIntoView({ behavior: "smooth", block: "end" });
+  }, 100);
+
 }
 
 form.addEventListener("submit", async (event) => {
