@@ -3,7 +3,7 @@
   --card: rgba(248, 250, 252, 0.95);
   --primary: #0f766e;
   --primary-dark: #134e4a;
-  --text: #1e293b;
+  --text: #1e293b; /* Gris corporativo oscuro */
   --muted: #64748b;
   --border: rgba(255, 255, 255, 0.4);
   --btn-grad-start: #648296;
@@ -46,27 +46,32 @@ body {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
 
-/* Encabezado interno de la tarjeta */
+/* Encabezado interno */
 .assistant-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid rgba(0, 0, 0, 0.05); gap: 16px; flex-wrap: wrap; }
 .card-title-group { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
-.card-title { font-size: 1.2rem; font-weight: 700; color: #000; margin: 0; }
+.card-title { font-size: 1.2rem; font-weight: 700; color: var(--text); margin: 0; }
 .status-badge { display: inline-flex; align-items: center; gap: 6px; background: #eafff0; color: #166534; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
 .status-dot { width: 8px; height: 8px; background: #22c55e; border-radius: 50%; }
 .card-actions { display: flex; gap: 12px; }
-.icon-btn { background: transparent; border: none; font-size: 1.1rem; color: var(--muted); cursor: pointer; display: flex; align-items: center; }
+.icon-btn { background: transparent; border: none; color: var(--muted); cursor: pointer; display: flex; align-items: center; padding: 4px; transition: color 0.2s; }
+.icon-btn:hover { color: var(--text); }
 
-/* Cuerpo de mensajes transparentado para que parezca panel y no chat */
+/* Cuerpo de mensajes */
 .messages { display: flex; flex-direction: column; gap: 16px; }
 .message { display: flex; gap: 0; }
 .message-content { background: transparent; border: none; padding: 0; line-height: 1.7; width: 100%; }
 
-.welcome-text { font-size: 1.3rem; margin: 0 0 12px 0; color: #000; font-weight: 700; }
-.instruction-text { margin: 0 0 24px 0; color: var(--text); }
-.section-title { font-size: 1.1rem; margin: 0 0 16px 0; color: #000; font-weight: 700; }
+.welcome-text { font-size: 1.3rem; margin: 0 0 12px 0; color: var(--text); font-weight: 700; }
+.instruction-text { margin: 0 0 24px 0; color: var(--text); opacity: 0.9; }
+.section-title { font-size: 1.1rem; margin: 0 0 16px 0; color: var(--text); font-weight: 700; }
 .footer-instruction { font-size: 0.95rem; color: var(--muted); font-style: italic; margin-top: 16px; }
 
 /* Botones de acción */
-.quick-actions { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.quick-actions { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
+  gap: 16px; 
+}
 .quick-btn {
   background: linear-gradient(135deg, var(--btn-grad-start), var(--btn-grad-end));
   color: white;
@@ -79,10 +84,14 @@ body {
   cursor: pointer;
   transition: all 0.2s ease;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Espacio exacto entre icono y texto */
 }
 .quick-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); filter: brightness(1.1); }
+.btn-icon { width: 18px; height: 18px; flex-shrink: 0; opacity: 0.9; }
 
-/* Formulario Composer (Píldora inferior) */
+/* Formulario Composer */
 .composer {
   background: white;
   border-radius: 30px;
@@ -120,7 +129,7 @@ body {
 }
 .composer button:hover { background: var(--primary); }
 
-/* Indicadores de estado */
+/* Indicadores */
 .typing-indicator { margin-top: 16px; color: var(--muted); font-style: italic; font-size: 0.95rem; }
 .form-error { color: #dc2626; text-align: center; margin-top: 12px; font-weight: 500; }
 
