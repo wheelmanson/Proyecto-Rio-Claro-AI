@@ -52,7 +52,10 @@ function appendMessage(text, sender) {
   
   // Auto-scroll suave hacia el nuevo mensaje
   setTimeout(() => {
-    article.scrollIntoView({ behavior: "smooth", block: "end" });
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: "smooth"
+    });
   }, 100);
 
 }
