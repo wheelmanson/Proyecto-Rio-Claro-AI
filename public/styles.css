@@ -150,20 +150,28 @@ body {
   min-height: 48px;
 }
 .composer textarea::placeholder { color: #94a3b8; }
+/* El botón de Consultar idéntico a las opciones superiores */
 .composer button {
-  background: var(--primary-dark);
+  background: linear-gradient(135deg, var(--btn-grad-start), var(--btn-grad-end));
   color: white;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 12px 24px;
-  border-radius: 24px;
+  border-radius: 10px; /* Mismo borde que los botones de opciones */
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 500; /* Mismo grosor de letra */
   cursor: pointer;
   display: flex;
   align-items: center;
-  transition: background 0.2s ease;
+  gap: 10px; /* Mismo espacio exacto entre el icono y el texto */
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
-.composer button:hover { background: var(--primary); }
+
+.composer button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  filter: brightness(1.1);
+}
 
 /* Indicadores */
 .typing-indicator { margin-top: 16px; color: var(--muted); font-style: italic; font-size: 0.95rem; }
@@ -210,7 +218,7 @@ body {
 }
 
 .main-logo {
-  height: 150px; /* Puedes subir o bajar este número para hacer el logo más grande o chico */
+  height: 180px; /* Puedes subir o bajar este número para hacer el logo más grande o chico */
   width: auto;
   object-fit: contain;
   display: block; /* Esto es clave para que el centrado funcione */
