@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0f172a">
+
+  <title>Río Claro | Asistente Inteligente</title>
+
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+
+<body>
+
+  <div class="app">
+
+    <header class="header">
+
+      <div class="logo-section">
+
+        <div class="logo">
+          RC
+        </div>
+
+        <div>
+
+          <div class="company-name">
+            Distribuidora Río Claro
+          </div>
+
+          <div class="company-subtitle">
+            Plataforma Empresarial de IA
+          </div>
+
+        </div>
+
+      </div>
+
+    </header>
+
+    <main class="main">
+
+      <div class="assistant-card">
+
+        <div class="assistant-header">
+
+        </div>
+
+        <div
+          class="messages"
+          id="messages"
+          aria-live="polite"
+          aria-relevant="additions text">
+
+          <article class="message assistant-message">
+
+            <div class="message-avatar">
+              RC
+            </div>
+
+            <div class="message-body">
+
+              <div class="message-author">
+                Río Claro - Asistente Inteligente
+              </div>
+
+              <div class="message-content">
+
+                Bienvenido al Centro de Conocimiento Río Claro.
+
+                <br><br>
+
+                Puede consultar información relacionada con:
+
+                <br><br>
+
+                <strong>Área de Consultas</strong>
+
+                <br><br>
+
+                <div class="quick-actions">
+
+                  <button
+                    type="button"
+                    class="quick-btn"
+                    onclick="
+                      document.getElementById('message-input').value='¿Cómo se registra una factura?';
+                      document.getElementById('chat-form').requestSubmit();
+                    ">
+                    📄 Facturación
+                  </button>
+
+                  <button
+                    type="button"
+                    class="quick-btn"
+                    onclick="
+                      document.getElementById('message-input').value='¿Cómo se controla el inventario?';
+                      document.getElementById('chat-form').requestSubmit();
+                    ">
+                    📦 Inventario
+                  </button>
+
+                  <button
+                    type="button"
+                    class="quick-btn"
+                    onclick="
+                      document.getElementById('message-input').value='¿Cómo se genera una orden de compra?';
+                      document.getElementById('chat-form').requestSubmit();
+                    ">
+                    🛒 Compras
+                  </button>
+
+                  <button
+                    type="button"
+                    class="quick-btn"
+                    onclick="
+                      document.getElementById('message-input').value='¿Cómo dar de alta un proveedor?';
+                      document.getElementById('chat-form').requestSubmit();
+                    ">
+                    🚚 Proveedores
+                  </button>
+
+                  <button
+                    type="button"
+                    class="quick-btn"
+                    onclick="
+                      document.getElementById('message-input').value='¿Cómo procesar una devolución?';
+                      document.getElementById('chat-form').requestSubmit();
+                    ">
+                    ↩️ Devoluciones
+                  </button>
+
+                  <button
+                    type="button"
+                    class="quick-btn"
+                    onclick="
+                      document.getElementById('message-input').value='¿Cómo atender una queja de cliente?';
+                      document.getElementById('chat-form').requestSubmit();
+                    ">
+                    ☎️ Atención a Clientes
+                  </button>
+
+                </div>
+
+                <br>
+
+                Seleccione una opción o escriba una consulta personalizada.
+
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+
+        <p
+          id="typing-indicator"
+          class="typing-indicator"
+          hidden>
+          Analizando información...
+        </p>
+
+      </div>
+
+      <form
+        id="chat-form"
+        class="composer">
+
+        <textarea
+          id="message-input"
+          name="message"
+          maxlength="2000"
+          rows="1"
+          placeholder="Ejemplo: ¿Cómo se registra una factura?"
+          required></textarea>
+
+        <button
+          id="send-button"
+          type="submit">
+          Consultar
+        </button>
+
+      </form>
+
+      <p
+        id="form-error"
+        class="form-error"
+        hidden>
+      </p>
+
+    </main>
+
+  </div>
+
+</body>
+</html>
