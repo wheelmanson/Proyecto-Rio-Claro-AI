@@ -32,7 +32,16 @@ function appendMessage(text, sender) {
 
     const messageText = document.createElement("p");
     messageText.className = "message-text";
-    messageText.textContent = text;
+    
+    // LIMPIEZA DE TEXTO Y SALTOS DE LÍNEA
+    // 1. Eliminar caracteres ocultos y códigos hexadecimales residuales (basura E2)
+    let textoLimpio = text.replace(/[\uE000-\uF8FF]/g, '');
+    
+    // 2. Convertir los saltos de línea (\n) del backend en saltos de línea HTML (<br>)
+    textoLimpio = textoLimpio.replace(/\n/g, '<br>');
+
+    // 3. Insertar el texto limpio como HTML para que se apliquen los saltos
+    messageText.innerHTML = textoLimpio;
 
     content.append(author, messageText);
     article.append(avatar, content);
@@ -41,7 +50,7 @@ function appendMessage(text, sender) {
 
     const messageText = document.createElement("p");
     messageText.className = "message-text";
-    messageText.textContent = text;
+    messageText.textContent = text; // Mantenemos textContent para el usuario por seguridad
 
     article.append(messageText);
 
