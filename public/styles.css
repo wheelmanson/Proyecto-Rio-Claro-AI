@@ -3,7 +3,7 @@
   --card: rgba(248, 250, 252, 0.95);
   --primary: #0f766e;
   --primary-dark: #134e4a;
-  --text: #1e293b; /* Gris corporativo oscuro */
+  --text: #1e293b;
   --muted: #64748b;
   --border: rgba(255, 255, 255, 0.4);
   --btn-grad-start: #648296;
@@ -27,7 +27,7 @@ body {
   padding: 40px 24px;
 }
 
-/* Header */
+/* Header General */
 .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; color: white; }
 .logo-section { display: flex; align-items: center; gap: 14px; }
 .logo { width: 54px; height: 54px; border-radius: 14px; display: flex; align-items: center; justify-content: center; background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(5px); font-size: 1.4rem; font-weight: bold; }
@@ -56,40 +56,76 @@ body {
 .icon-btn { background: transparent; border: none; color: var(--muted); cursor: pointer; display: flex; align-items: center; padding: 4px; transition: color 0.2s; }
 .icon-btn:hover { color: var(--text); }
 
-/* Cuerpo de mensajes */
-.messages { display: flex; flex-direction: column; gap: 16px; }
-.message { display: flex; gap: 0; }
-.message-content { background: transparent; border: none; padding: 0; line-height: 1.7; width: 100%; }
-
+/* Textos de bienvenida */
 .welcome-text { font-size: 1.3rem; margin: 0 0 12px 0; color: var(--text); font-weight: 700; }
 .instruction-text { margin: 0 0 24px 0; color: var(--text); opacity: 0.9; }
 .section-title { font-size: 1.1rem; margin: 0 0 16px 0; color: var(--text); font-weight: 700; }
 .footer-instruction { font-size: 0.95rem; color: var(--muted); font-style: italic; margin-top: 16px; }
 
-/* Botones de acción */
+/* Botones de acción corregidos (2 columnas y más compactos) */
 .quick-actions { 
   display: grid; 
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
-  gap: 16px; 
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 12px; 
+  margin-top: 10px;
 }
 .quick-btn {
   background: linear-gradient(135deg, var(--btn-grad-start), var(--btn-grad-end));
   color: white;
   border: 1px solid rgba(255,255,255,0.2);
   border-radius: 10px;
-  padding: 14px 16px;
+  padding: 10px 14px;
   text-align: left;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   display: flex;
   align-items: center;
-  gap: 12px; /* Espacio exacto entre icono y texto */
+  gap: 10px;
 }
 .quick-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); filter: brightness(1.1); }
 .btn-icon { width: 18px; height: 18px; flex-shrink: 0; opacity: 0.9; }
+
+/* Cuerpo de mensajes dinámicos (Corrección de historial para que no se pegue) */
+.messages { display: flex; flex-direction: column; gap: 20px; }
+.message { 
+  display: flex; 
+  gap: 16px; 
+  align-items: flex-start;
+}
+.message-body { flex: 1; }
+
+.message-avatar { 
+  width: 38px; 
+  height: 38px; 
+  border-radius: 10px; 
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark)); 
+  color: white; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  font-weight: bold; 
+  font-size: 0.9rem;
+  flex-shrink: 0; 
+}
+
+.message-author { 
+  font-weight: 700; 
+  color: var(--primary-dark); 
+  margin-bottom: 6px; 
+  font-size: 0.95rem; 
+}
+
+.message-content { 
+  background: transparent; 
+  border: none; 
+  padding: 0; 
+  line-height: 1.6; 
+  width: 100%; 
+  color: var(--text);
+}
 
 /* Formulario Composer */
 .composer {
@@ -133,6 +169,7 @@ body {
 .typing-indicator { margin-top: 16px; color: var(--muted); font-style: italic; font-size: 0.95rem; }
 .form-error { color: #dc2626; text-align: center; margin-top: 12px; font-weight: 500; }
 
+/* Responsive */
 @media (max-width: 600px) {
   .header { flex-direction: column; align-items: flex-start; gap: 16px; }
   .quick-actions { grid-template-columns: 1fr; }
