@@ -34,14 +34,11 @@ function appendMessage(text, sender) {
     messageText.className = "message-text";
     
     // LIMPIEZA DE TEXTO Y SALTOS DE LÍNEA
-    // 1. Eliminar caracteres ocultos y códigos hexadecimales residuales (basura E2)
+    // 1. Eliminar caracteres ocultos y basura hexadecimal
     let textoLimpio = text.replace(/[\uE000-\uF8FF]/g, '');
     
-    // 2. Convertir los saltos de línea (\n) del backend en saltos de línea HTML (<br>)
-    textoLimpio = textoLimpio.replace(/\n/g, '<br>');
-
-    // 3. Insertar el texto limpio como HTML para que se apliquen los saltos
-    messageText.innerHTML = textoLimpio;
+    // 2. Traducir el Markdown (listas, negritas, saltos) a código HTML automático
+    messageText.innerHTML = marked.parse(textoLimpio);
 
     content.append(author, messageText);
     article.append(avatar, content);
