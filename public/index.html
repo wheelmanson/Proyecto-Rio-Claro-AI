@@ -110,20 +110,59 @@
 
                 <br><br>
 
-                Escriba una pregunta para comenzar.
+                <strong>Consultas rápidas</strong>
 
                 <br><br>
 
-                <strong>Consultas sugeridas:</strong>
+                <div class="quick-actions">
 
-                <br><br>
+                  <button
+                    type="button"
+                    class="quick-btn"
+                    onclick="document.getElementById('message-input').value='¿Cómo se registra una factura?';">
+                    📄 Facturación
+                  </button>
 
-                📄 ¿Cómo se registra una factura?<br>
-                📦 ¿Cómo se controla el inventario?<br>
-                🛒 ¿Cómo se genera una orden de compra?<br>
-                🚚 ¿Cómo dar de alta un proveedor?<br>
-                ↩ ¿Cómo procesar una devolución?<br>
-                ☎ ¿Cómo atender una queja de cliente?
+                  <button
+                    type="button"
+                    class="quick-btn"
+                    onclick="document.getElementById('message-input').value='¿Cómo se controla el inventario?';">
+                    📦 Inventario
+                  </button>
+
+                  <button
+                    type="button"
+                    class="quick-btn"
+                    onclick="document.getElementById('message-input').value='¿Cómo se genera una orden de compra?';">
+                    🛒 Compras
+                  </button>
+
+                  <button
+                    type="button"
+                    class="quick-btn"
+                    onclick="document.getElementById('message-input').value='¿Cómo dar de alta un proveedor?';">
+                    🚚 Proveedores
+                  </button>
+
+                  <button
+                    type="button"
+                    class="quick-btn"
+                    onclick="document.getElementById('message-input').value='¿Cómo procesar una devolución?';">
+                    ↩️ Devoluciones
+                  </button>
+
+                  <button
+                    type="button"
+                    class="quick-btn"
+                    onclick="document.getElementById('message-input').value='¿Cómo atender una queja de cliente?';">
+                    ☎️ Atención a Clientes
+                  </button>
+
+                </div>
+
+                <br>
+
+                Seleccione una opción o escriba una pregunta personalizada.
 
               </div>
 
@@ -153,9 +192,7 @@
           name="message"
           maxlength="2000"
           rows="1"
-          placeholder="Ejemplo: ¿Cómo se registra una factura?"
-          required></textarea>
-
+          placeholder="Ejemplo: ¿Cómo se 
         <button
           id="send-button"
           type="submit">
