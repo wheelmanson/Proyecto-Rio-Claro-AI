@@ -176,3 +176,28 @@ body {
   .composer { flex-direction: column; border-radius: 16px; padding: 16px; }
   .composer button { width: 100%; justify-content: center; }
 }
+
+/* Estilos para el texto procesado con Markdown */
+.message-content p {
+  margin-bottom: 12px;
+}
+
+.message-content p:last-child {
+  margin-bottom: 0;
+}
+
+.message-content ul, 
+.message-content ol {
+  margin-bottom: 16px;
+  padding-left: 24px; /* Espacio para las viñetas y números */
+}
+
+.message-content li {
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+.message-content strong {
+  color: var(--primary-dark); /* Resalta las negritas con el color corporativo */
+  font-weight: 700;
+}
