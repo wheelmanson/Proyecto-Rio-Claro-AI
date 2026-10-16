@@ -13,11 +13,6 @@ function appendMessage(text, sender) {
 
   if (sender === "assistant") {
 
-    const avatar = document.createElement("span");
-    avatar.className = "message-avatar";
-    avatar.setAttribute("aria-hidden", "true");
-    avatar.textContent = "RC";
-
     const content = document.createElement("div");
     content.className = "message-content";
 
@@ -41,7 +36,7 @@ function appendMessage(text, sender) {
     messageText.innerHTML = marked.parse(textoLimpio);
 
     content.append(author, messageText);
-    article.append(avatar, content);
+    article.append(content);
 
   } else {
 
