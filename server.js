@@ -155,13 +155,81 @@ app.post(
 
     try {
 
-      const conversationId =
-        suppliedConversationId?.trim() ||
-        (
-          await openAIClient
-            .conversations
-            .create()
-        ).id;
+  const facturaMatch = message.match(/FAC-\d{4}-\d{3}/i);
+
+  if (facturaMatch) {
+
+    const archivo = facturaMatch[0].toUpperCase();
+
+    response.json({
+      reply:
+        `📄 Descarga disponible:\n\n` +
+        `${request.protocol}://${request.get("host")}/Facturas/${archivo}.pdf`,
+      conversation_id: suppliedConversationId ?? null,
+    });
+
+    return;
+
+  }
+
+  const ordenMatch = message.match(/OC-\d{4}-\d{3}/i);
+
+  if (ordenMatch) {
+
+    const archivo = ordenMatch[0].toUpperCase();
+
+    response.json({
+      reply:
+        `🛒 Descarga disponible:\n\n` +
+        `${request.protocol}://${request.get("host")}/Ordenes_Compra/${archivo}.pdf`,
+      conversation_id: suppliedConversationId ?? null,
+    });
+
+    return;
+
+  }
+
+  const devolucionMatch = message.match(/DEV-\d{4}-\d{3}/i);
+
+  if (devolucionMatch) {
+
+    const archivo = devolucionMatch[0].toUpperCase();
+
+    response.json({
+      reply:
+        `↩️ Descarga disponible:\n\n` +
+        `${request.protocol}://${request.get("host")}/Devoluciones/${archivo}.pdf`,
+      conversation_id: suppliedConversationId ?? null,
+    });
+
+    return;
+
+  }
+
+  const proveedorMatch = message.match(/PRV-\d{3}/i);
+
+  if (proveedorMatch) {
+
+    const archivo = proveedorMatch[0].toUpperCase();
+
+    response.json({
+      reply:
+        `🚚 Descarga disponible:\n\n` +
+        `${request.protocol}://${request.get("host")}/Proveedores/${archivo}.pdf`,
+      conversation_id: suppliedConversationId ?? null,
+    });
+
+    return;
+
+  }
+
+  const conversationId =
+    suppliedConversationId?.trim() ||
+    (
+      await openAIClient
+        .conversations
+        .create()
+    ).id;
 
       const result =
         await openAIClient
@@ -231,6 +299,35 @@ app.use(
 
   }
 );
+
+app.get(
+  "/descargar/:archivo",
+  (request, response) => {
+
+    const archivo = path.join(
+      publicDirectory,
+      "documentos",
+      request.params.archivo
+    );
+
+    response.download(
+      archivo,
+      (error) => {
+
+        if (error) {
+
+          response.status(404).json({
+            error: "Archivo no encontrado."
+          });
+
+        }
+
+      }
+    );
+
+  }
+);
+
 
 app.listen(
   port,
