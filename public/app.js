@@ -25,14 +25,11 @@ function appendMessage(text, sender) {
 
     author.append(role);
 
-    const messageText = document.createElement("p");
+    const messageText = document.createElement("div");
     messageText.className = "message-text";
-    
-    // LIMPIEZA DE TEXTO Y SALTOS DE LÍNEA
-    // 1. Eliminar caracteres ocultos y basura hexadecimal
-    let textoLimpio = text.replace(/[\uE000-\uF8FF]/g, '');
-    
-    // 2. Traducir el Markdown (listas, negritas, saltos) a código HTML automático
+
+    let textoLimpio = text.replace(/[\uE000-\uF8FF]/g, "");
+
     messageText.innerHTML = marked.parse(textoLimpio);
 
     content.append(author, messageText);
@@ -42,22 +39,20 @@ function appendMessage(text, sender) {
 
     const messageText = document.createElement("p");
     messageText.className = "message-text";
-    messageText.textContent = text; // Mantenemos textContent para el usuario por seguridad
+    messageText.textContent = text;
 
     article.append(messageText);
 
   }
 
   messages.append(article);
-  
-  // Auto-scroll suave hacia el nuevo mensaje
+
   setTimeout(() => {
     window.scrollTo({
       top: document.body.scrollHeight,
       behavior: "smooth"
     });
   }, 100);
-
 }
 
 form.addEventListener("submit", async (event) => {
