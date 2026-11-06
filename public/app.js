@@ -32,6 +32,12 @@ function appendMessage(text, sender) {
 
     messageText.innerHTML = marked.parse(textoLimpio);
 
+    messageText.innerHTML =
+    messageText.innerHTML.replace(
+    /(FAC-\d{4}-\d{3}\.pdf)/gi,
+    '<a href="/Documentos/Facturas/$1" target="_blank" class="download-btn">⬇ Descargar $1</a>'
+    ) ;
+
     content.append(author, messageText);
     article.append(content);
 
